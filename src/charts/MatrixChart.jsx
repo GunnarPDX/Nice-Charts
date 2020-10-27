@@ -16,18 +16,9 @@ const HeatmapChart = () => {
         {x: 3, y: 1, color: 0.236184044/*'#83baff'*/, xLabel: 'tsla', yLabel: 'amzn'},
     ];
 
-    const {min, max} = data.reduce(
-        (acc, row) => ({
-            min: Math.min(acc.min, row.color),
-            max: Math.max(acc.max, row.color)
-        }),
-        {min: Infinity, max: -Infinity}
-    );
-
     const exampleColorScale = scaleLinear()
-        .domain([min, (min + max) / 2, max])
-        //.range(d3.scaleSequential(d3.interpolateInferno));
-        .range(['#141589', '#CC4879', '#F2F524']);
+        .domain([0, 0.5, 1])
+        .range(['#0098f5', '#c5c6cc', '#e1705a']);
 
     const yAxisFormatter = (t, i) => {
         let item = data.filter((item) => {
@@ -62,9 +53,9 @@ const HeatmapChart = () => {
                 top={300 - 100 + 10}
                 tickSizeInner={0}
                 style={{
-                    line: {stroke: 'black'},
-                    ticks: {stroke: 'black'},
-                    text: {stroke: 'none', fontWeight: 600}
+                    line: {stroke: 'white'},
+                    ticks: {stroke: 'white'},
+                    text: {stroke: 'none', fontWeight: 600, fill: 'white'}
                 }}
             />
             <YAxis
@@ -73,9 +64,9 @@ const HeatmapChart = () => {
                 left={-10}
                 tickSizeInner={0}
                 style={{
-                    line: {stroke: 'black'},
-                    ticks: {stroke: 'black'},
-                    text: {stroke: 'none', fontWeight: 600}
+                    line: {stroke: 'white'},
+                    ticks: {stroke: 'white'},
+                    text: {stroke: 'none', fontWeight: 600, fill: 'white'}
                 }}
             />
             <HeatmapSeries
@@ -84,7 +75,7 @@ const HeatmapChart = () => {
                 className="heatmap-series"
                 data={data}
                 style={{
-                    stroke: 'white',
+                    stroke: '#111111',
                     strokeWidth: '2px',
                     rectStyle: {
                         rx: 5,
@@ -93,10 +84,10 @@ const HeatmapChart = () => {
                 }}
             />
             <LabelSeries
-                style={{pointerEvents: 'none'}}
+                style={{pointerEvents: 'none', fill: '#111111', fontWeight: 800}}
                 data={data}
                 labelAnchorX="middle"
-                labelAnchorY="baseline"
+                labelAnchorY="middle"
                 getLabel={d => `${d.color}`}
             />
         </XYPlot>
