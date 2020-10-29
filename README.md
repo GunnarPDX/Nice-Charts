@@ -1,7 +1,8 @@
 
 # Examples
 ### Correlation Matrix
-- `src/charts/MatrixChart.jsx`
+`src/charts/MatrixChart.jsx`
+
 ![correlation matrix img](https://github.com/GunnarPDX/correlation-matrix-chart/blob/master/corr-matrix.png?raw=true)
 
 
