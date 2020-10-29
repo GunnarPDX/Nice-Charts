@@ -10,6 +10,7 @@ const HeatmapChart = (props) => {
 
     const data = props.data;
 
+    /*
     let data1 = [
         {color: 0.674977695, x: 1, xLabel: "aapl", y: 1, yLabel: "amzn"},
         {color: 0.104192125, x: 1, xLabel: "aapl", y: 2, yLabel: "tsla"},
@@ -31,9 +32,19 @@ const HeatmapChart = (props) => {
 
         {x: 3, y: 1, color: 0.236184044, xLabel: 'tsla', yLabel: 'amzn'},
     ];
+     */
 
+    const {min, max} = data.reduce(
+        (acc, row) => ({
+            min: Math.min(acc.min, row.color),
+            max: Math.max(acc.max, row.color)
+        }),
+        {min: Infinity, max: -Infinity}
+    );
+
+    // fixed domain ex: [0, 0.5, 1]
     const exampleColorScale = scaleLinear()
-        .domain([0, 0.5, 1]) // TODO: bring back dynamic domain for uasge with downside correlation !
+        .domain([min, (min + max) / 2, max]) // TODO: bring back dynamic domain for uasge with downside correlation !
         .range(['#0098f5', '#c5c6cc', '#e1705a']);
 
     const yAxisFormatter = (t, i) => {
