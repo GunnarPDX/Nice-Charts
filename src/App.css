@@ -1,9 +1,16 @@
-body {
-  background: #111111;
-  color: white;
+
+:root {
+  --bg-color: #1b1b25;
+  --text: #FEFEFE;
+  --light-blue: #5582D6;
+  --green: #95ffba;
 }
 
 
+body {
+  background: var(--bg-color);
+  color: var(--text);
+}
 
 .App {
   padding: 50px;
