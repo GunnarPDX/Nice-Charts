@@ -1,11 +1,11 @@
 import React, {useMemo} from 'react';
-import {AreaClosed, LinePath, Bar} from '@vx/shape';
+import {AreaClosed, LinePath} from '@vx/shape';
 import {curveMonotoneX} from '@vx/curve';
 import {scaleLinear} from '@vx/scale';
 import {withTooltip} from '@vx/tooltip';
 import {LinearGradient} from '@vx/gradient';
 import {max, min} from 'd3-array';
-import {AxisBottom, AxisLeft} from '@vx/axis';
+import {AxisBottom, AxisLeft, AxisRight} from '@vx/axis';
 import {PatternLines} from '@vx/pattern';
 import {orderBook} from "../sample-data/orderBook";
 
@@ -37,12 +37,6 @@ export default withTooltip(({width, height, margin = { top: 0, right: 0, bottom:
     const bidData = addSteps(bidDataUnstepped).list;
     const askData = addSteps(askDataUnstepped).list;
 
-    console.log(bidData);
-
-    if(!askData || !bidData) return null;
-
-
-
     // bounds
     const xMax = width - margin.right;
     const xMin = margin.left;
@@ -50,17 +44,11 @@ export default withTooltip(({width, height, margin = { top: 0, right: 0, bottom:
 
     const getMinMax = (func, axisBuffer) => {
         const maxAskVal = (max(askData, func) || 0);
-        //console.log(maxAskVal);
         const minAskVal = (min(askData, func) || 0);
-        //console.log(minAskVal);
         const maxBidVal = (max(bidData, func) || 0);
-        //console.log(maxBidVal);
         const minBidVal = (min(bidData, func) || 0);
-        //console.log(minBidVal);
         const maxVal = (maxAskVal > maxBidVal ? maxAskVal : maxBidVal);
-        //console.log(maxVal);
         const minVal = (minBidVal < minAskVal ? minBidVal : minAskVal);
-        //console.log(minVal);
         const maxOffset =  maxVal + axisBuffer;
         return [maxOffset, minVal];
     };
@@ -68,14 +56,6 @@ export default withTooltip(({width, height, margin = { top: 0, right: 0, bottom:
     const [maxPriceOffset, minPriceOffset] = getMinMax(getPrice, 0);
     const [maxVolumeOffset, minVolumeOffset] = getMinMax(getVolume, 0);
 
-
-    //console.log("range: ");
-    //console.log(0);
-    //console.log(xMax);
-    //console.log("domain: ");
-    //console.log(minPriceOffset);
-    //console.log(maxPriceOffset);
-    // scales
     const priceScale = useMemo(
         () =>
             scaleLinear({

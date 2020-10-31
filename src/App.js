@@ -19,7 +19,7 @@ function App() {
 
       <br/>
 
-      <PriceChart height={400} width={700}/>
+      <PriceChart height={300} width={700}/>
 
       <br/>
 

@@ -1,16 +1,14 @@
-import React, { useMemo, useCallback } from 'react';
-import { AreaClosed, Line, LinePath, Bar } from '@vx/shape';
-import appleStock, { AppleStock } from '@vx/mock-data/lib/mocks/appleStock';
-import { curveMonotoneX } from '@vx/curve';
-//import { GridRows, GridColumns } from '@vx/grid';
-import { scaleTime, scaleLinear } from '@vx/scale';
-import { withTooltip, Tooltip, defaultStyles } from '@vx/tooltip';
-//import { WithTooltipProvidedProps } from '@vx/tooltip/lib/enhancers/withTooltip';
-import { localPoint } from '@vx/event';
-import { LinearGradient } from '@vx/gradient';
-import { max, min, extent, bisector } from 'd3-array';
-import { timeFormat } from 'd3-time-format';
-import { PatternLines } from '@vx/pattern';
+import React, {useMemo, useCallback} from 'react';
+import {AreaClosed, LinePath, Bar} from '@vx/shape';
+import appleStock from '@vx/mock-data/lib/mocks/appleStock';
+import {curveMonotoneX} from '@vx/curve';
+import {scaleTime, scaleLinear} from '@vx/scale';
+import {withTooltip, Tooltip, defaultStyles} from '@vx/tooltip';
+import {localPoint} from '@vx/event';
+import {LinearGradient} from '@vx/gradient';
+import {max, min, extent, bisector} from 'd3-array';
+import {timeFormat} from 'd3-time-format';
+import {PatternLines} from '@vx/pattern';
 
 
 const stock = appleStock.slice(1000);

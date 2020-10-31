@@ -23,7 +23,6 @@ const HeatmapChart = (props) => {
     const exampleColorScale = scaleLinear()
         .domain([min, (min + max) / 2, max])
         .range(['#5275C1', '#2d2b4a', '#c1796c']);
-        //['#0098f5', '#c5c6cc', '#e1705a'] <~~ og red/blue
 
     const yAxisFormatter = (t, i) => {
         let item = data.filter((item) => {
