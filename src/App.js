@@ -17,9 +17,11 @@ function App() {
 
       <MatrixChart {...{data: matrixData}}/>
 
+      <br/>
 
       <PriceChart height={400} width={700}/>
 
+      <br/>
 
       <OrderBookChart height={400} width={700}/>
 

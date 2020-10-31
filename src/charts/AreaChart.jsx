@@ -14,10 +14,7 @@ import { PatternLines } from '@vx/pattern';
 
 
 const stock = appleStock.slice(1000);
-export const background = '#3b6978';
-export const background2 = '#204051';
-export const accentColor = '#edffea';
-export const accentColorDark = 'var(--light-blue)';
+
 const tooltipStyles = {
     ...defaultStyles,
     background: 'var(--light-blue)',
@@ -58,7 +55,7 @@ export default withTooltip(
     const maxVal = (max(stock, getStockValue) || 0);
     const minVal = (min(stock, getStockValue) || 0);
     const maxOffset =  maxVal + yMax / 6;
-    const minOffset = minVal / 2;
+    const minOffset = minVal / 1.1;
 
 
     // scales
@@ -105,12 +102,9 @@ export default withTooltip(
         <div style={{float: 'left'}}>
             <svg width={width} height={height}>
 
-                {/*<LinearGradient id="area-background-gradient" from={background} to={background2} />
-                <LinearGradient id="area-gradient" from={accentColor} to={accentColor} toOpacity={0.1} />*/}
-
                 <LinearGradient
                     id="area-gradient"
-                    from="#6086d6"
+                    from="var(--light-blue)"
                     to="#6086d6"
                     fromOpacity={0.2}
                     toOpacity={0}
@@ -149,9 +143,21 @@ export default withTooltip(
 
                     x={d => dateScale(getDate(d))}
                     y={d => stockValueScale(getStockValue(d))}
-                    stroke="#6086d6"
+                    stroke="var(--light-blue)"
                     strokeOpacity="0.8"
                     strokeWidth={1}
+                />
+                <Bar
+                    x={0}
+                    y={0}
+                    width={width}
+                    height={height}
+                    fill="transparent"
+                    rx={14}
+                    onTouchStart={handleTooltip}
+                    onTouchMove={handleTooltip}
+                    onMouseMove={handleTooltip}
+                    onMouseLeave={() => hideTooltip()}
                 />
                 {tooltipData && (
                     <g>
