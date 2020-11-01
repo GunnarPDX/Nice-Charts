@@ -9,7 +9,7 @@ vx/visx: https://github.com/airbnb/visx
 ### Correlation Matrix
 `src/charts/MatrixChart.jsx`
 
-![correlation matrix img](https://github.com/GunnarPDX/correlation-matrix-chart/blob/master/corr-matrix.png?raw=true)
+![correlation matrix img](https://github.com/GunnarPDX/correlation-matrix-chart/blob/master/correlation-matrix.png?raw=true)
 
 
 ### Price Chart
