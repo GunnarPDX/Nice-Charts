@@ -182,6 +182,7 @@ export default withTooltip(({width, height, margin = { top: 0, right: 0, bottom:
                     hideAxisLine
                     //stroke={'var(--light-blue)'}
                     tickStroke={'var(--light-blue)'}
+                    hideZero
                     tickLabelProps={() => ({
                         fill: 'var(--light-blue)',
                         fontSize: 11,

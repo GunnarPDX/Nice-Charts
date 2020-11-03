@@ -2,11 +2,14 @@
 
 ![examples preview](https://github.com/GunnarPDX/Nice-Charts/blob/master/preview.png?raw=true)
 
-These are some slick financial charts I made with react-vis and vx-charts/visx. More on the way soon!
+These are some financial charts I made with react-vis and vx-charts/visx. More on the way!
 
 react-vis: https://github.com/uber/react-vis
+`yarn add react-vis`
 
 vx/visx: https://github.com/airbnb/visx
+`yarn add @vx/vx`
+
 
 # Examples
 ### Correlation Matrix
