@@ -179,7 +179,8 @@ export default withTooltip(({width, height, margin = { top: 0, right: 0, bottom:
                     left={margin.left}
                     scale={volumeScale}
                     numTicks={height > 300 ? 10 : 5}
-                    stroke={'var(--light-blue)'}
+                    hideAxisLine
+                    //stroke={'var(--light-blue)'}
                     tickStroke={'var(--light-blue)'}
                     tickLabelProps={() => ({
                         fill: 'var(--light-blue)',
@@ -206,6 +207,10 @@ export default withTooltip(({width, height, margin = { top: 0, right: 0, bottom:
                         dy: '0.1em',
                     })}
                 />
+
+                <line x1={xMax} x2={xMax} y1={0} y2={yMax} stroke={'var(--light-blue'} />
+                <line x1={xMin} x2={xMin} y1={0} y2={yMax} stroke={'var(--light-blue'} />
+                <line x1={xMin} x2={xMax} y1={0} y2={0} stroke={'var(--light-blue'} />
 
             </svg>
         </div>

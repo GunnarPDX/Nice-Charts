@@ -44,12 +44,18 @@ export default withTooltip(() => {
     const margin = {
         top: 0,
         left: 0,
-        right: 50,
-        bottom: 80
+        right: 60,
+        bottom: 40
     };
 
     const width = 700;
     const height = 400;
+
+    const xMin = margin.left;
+    const xMax = width - margin.right - 5;
+    const yMin = margin.top;
+    const yMax = height - margin.bottom;
+
 
     const xScale = scaleBand({
         range: [0, width - 5 - margin.right],
@@ -73,7 +79,7 @@ export default withTooltip(() => {
     });
 
     return (
-        <div style={{float: 'left', marginTop: 40}}>
+        <div style={{float: 'left'}}>
             <svg width={width} height={height}>
                 <LinearGradient
                     id="green-fill"
@@ -100,7 +106,7 @@ export default withTooltip(() => {
                 <Group top={margin.top} left={margin.left}>
 
                     <GridRows
-                        width={width - 5 - margin.right}
+                        width={width - margin.right}
                         height={height}
                         scale={yScale}
                         strokeDasharray={2.5}
@@ -174,25 +180,29 @@ export default withTooltip(() => {
                 <AxisRight
                     left={width - margin.right}
                     scale={yScale}
-                    hideAxisLine
-                    hideTickStroke
+                    //hideAxisLine
+                    stroke={'var(--light-blue)'}
+                    //hideTickStroke
+                    tickStroke={'var(--light-blue)'}
                     hideZero
                     tickFormat={formatPrice}
-                    tickLength={0}
+                    //tickLength={0}
                     tickLabelProps={() => ({
                         fill: 'var(--light-blue)',
                         fontSize: 11,
                         fontWeight: 600,
                         textAnchor: 'start',
                         dy: '0.33em',
-                        dx: '-0.3em',
+                        dx: '0.33em',
                     })}
                 />
                 <AxisBottom
                     top={height - margin.bottom}
                     scale={timeScale}
-                    hideAxisLine
-                    hideTickStroke
+                    //hideAxisLine
+                    stroke={'var(--light-blue)'}
+                    //hideTickStroke
+                    tickStroke={'var(--light-blue)'}
                     hideZero
                     numTicks={width > 520 ? 7 : 4}
                     tickFormat={formatTime}
@@ -204,6 +214,15 @@ export default withTooltip(() => {
                         dy: '0.1em',
                     })}
                 />
+
+
+                <line x1={xMax + 5} x2={xMax + 5} y1={0} y2={yMax} stroke={'var(--light-blue'} />
+                {/*
+                <line x1={width} x2={width} y1={0} y2={yMax} stroke={'var(--light-blue'} />
+                */}
+                <line x1={xMin} x2={xMin} y1={0} y2={yMax} stroke={'var(--light-blue'} />
+                <line x1={xMin} x2={xMax + 5} y1={0} y2={0} stroke={'var(--light-blue'} />
+
             </svg>
 
         </div>
