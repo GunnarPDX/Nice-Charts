@@ -76,7 +76,7 @@ export default withTooltip(({width, height, margin = { top: 0, right: 0, bottom:
     );
 
     return (
-        <div style={{float: 'left'}}>
+        <div>
             <svg width={width} height={height}>
 
                 {/* BID */}

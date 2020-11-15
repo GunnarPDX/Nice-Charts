@@ -21,9 +21,19 @@ const getHighValue = d => d.high;
 const getLowValue = d => d.low;
 const getVolume = d => d.volume;
 
-export default withTooltip(() => {
+export default withTooltip(({
+                                data,
+                                height,
+                                width,
+                                margin = {
+                                    top: 0,
+                                    left: 0,
+                                    right: 60,
+                                    bottom: 40
+                                }
+}) => {
 
-    const data = StockOHCLV.slice(300);
+    //const data = StockOHCLV.slice(300);
 
     //add direction (red ~> false) or (green ~> true) to quotes
     const quotes = data.map((d) => {
@@ -40,16 +50,6 @@ export default withTooltip(() => {
     const maxHighPrice = (max(quotes, getHighValue) || 0);
     const minLowPrice = (min(quotes, getLowValue) || 0);
     const maxVolume = (max(quotes, getVolume) || 0);
-
-    const margin = {
-        top: 0,
-        left: 0,
-        right: 60,
-        bottom: 40
-    };
-
-    const width = 700;
-    const height = 400;
 
     const xMin = margin.left;
     const xMax = width - margin.right - 5;
@@ -79,7 +79,7 @@ export default withTooltip(() => {
     });
 
     return (
-        <div style={{float: 'left'}}>
+        <div>
             <svg width={width} height={height}>
                 <LinearGradient
                     id="green-fill"

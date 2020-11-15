@@ -2,7 +2,7 @@ import React from "react";
 import AreaChart from "./AreaChart";
 
 
-const PriceChart = ({height, width}) => {
+const PriceChart = ({height, width, data}) => {
 
     // TODO: add price high/low and current price...
 
@@ -18,7 +18,7 @@ const PriceChart = ({height, width}) => {
                 width: width
             }}>
 
-            <AreaChart height={height} width={width}/>
+            <AreaChart height={height} width={width} data={data}/>
 
             </div>
 

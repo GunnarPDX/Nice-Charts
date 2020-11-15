@@ -7,8 +7,11 @@ import PriceChart from "./charts/PriceChart";
 import {matrixData} from "./sample-data/matrixData";
 import OrderBookChart from "./charts/OrderBookChart";
 import CandlestickChart from "./charts/CandlestickChart";
+import {StockOHCLV} from "./sample-data/ohlcvData";
+import appleStock from '@vx/mock-data/lib/mocks/appleStock';
 
-
+const CandleStickData = StockOHCLV.slice(300);
+const stock = appleStock.slice(1000);
 
 
 function App() {
@@ -16,11 +19,11 @@ function App() {
     return (
     <div className="App">
 
-      <MatrixChart {...{data: matrixData}}/>
+      <MatrixChart data={matrixData}/>
 
       <br/>
 
-      <PriceChart height={300} width={700}/>
+      <PriceChart height={300} width={700} data={stock}/>
 
       <br/>
 
@@ -28,7 +31,7 @@ function App() {
 
       <br/>
 
-      <CandlestickChart/>
+      <CandlestickChart height={400} width={700} data={CandleStickData} />
 
     </div>
   );

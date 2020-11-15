@@ -4,9 +4,7 @@ import {XYPlot, XAxis, YAxis, HeatmapSeries, LabelSeries} from 'react-vis';
 
 
 
-const HeatmapChart = (props) => {
-
-    const data = props.data;
+const HeatmapChart = ({data}) => {
 
     const width = 700;
     const height = 250;
