@@ -4,6 +4,7 @@ import React from "react";
 
 
 import PriceChart from "./charts/PriceChart";
+import ThresholdChart from "./charts/ThresholdChart.jsx"
 import {matrixData} from "./sample-data/matrixData";
 import OrderBookChart from "./charts/OrderBookChart";
 import CandlestickChart from "./charts/CandlestickChart";
@@ -32,6 +33,10 @@ function App() {
       <br/>
 
       <CandlestickChart height={400} width={700} data={CandleStickData} />
+
+      <br/>
+
+      <ThresholdChart height={400} width={700}/>
 
     </div>
   );

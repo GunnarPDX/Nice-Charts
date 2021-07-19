@@ -95,7 +95,7 @@ export default withTooltip(
     );
 
     return (
-        <div style={{float: 'left'}}>
+        <div>
             <svg width={width} height={height}>
 
                 <LinearGradient

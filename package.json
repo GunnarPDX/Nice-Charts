@@ -6,6 +6,13 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@visx/axis": "^1.17.0",
+    "@visx/curve": "latest",
+    "@visx/group": "latest",
+    "@visx/mock-data": "^1.7.0",
+    "@visx/scale": "^1.14.0",
+    "@visx/shape": "latest",
+    "@visx/threshold": "^1.16.0",
     "@vx/vx": "^0.0.199",
     "d3-format": "^2.0.0",
     "d3-scale": "latest",
@@ -40,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@visx/grid": "^1.16.0"
   }
 }

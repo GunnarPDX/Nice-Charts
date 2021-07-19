@@ -22,15 +22,15 @@ const getLowValue = d => d.low;
 const getVolume = d => d.volume;
 
 export default withTooltip(({
-                                data,
-                                height,
-                                width,
-                                margin = {
-                                    top: 0,
-                                    left: 0,
-                                    right: 60,
-                                    bottom: 40
-                                }
+  data,
+  height,
+  width,
+  margin = {
+      top: 0,
+      left: 0,
+      right: 60,
+      bottom: 40
+  }
 }) => {
 
     //const data = StockOHCLV.slice(300);
