@@ -2,7 +2,8 @@
 
 ![examples preview](https://github.com/GunnarPDX/Nice-Charts/blob/master/preview.png?raw=true)
 
-These are some financial charts I made with react-vis and vx-charts/visx. More on the way!
+These are some financial charts I made with react-vis and vx-charts/visx for projects of mine. 
+Sharing these in case anyone else finds them useful, feel free to open up a PR if there are any you would like to add.
 
 react-vis: https://github.com/uber/react-vis
 `yarn add react-vis`
@@ -13,16 +14,10 @@ vx/visx: https://github.com/airbnb/visx
 
 # Examples
 ### Correlation Matrix
+check out https://github.com/GunnarPDX/Correlations for backend usage examples
 `src/charts/MatrixChart.jsx`
 
 ![correlation matrix img](https://github.com/GunnarPDX/Nice-Charts/blob/master/correlation-matrix.png?raw=true)
-
-
-### Price Chart
-`src/charts/PriceChart.jsx`
-`src/charts/AreaChart.jsx`
-
-![price chart img](https://github.com/GunnarPDX/Nice-Charts/blob/master/price-chart.png?raw=true)
 
 
 ### Order Book
@@ -36,3 +31,13 @@ vx/visx: https://github.com/airbnb/visx
 
 ![candlestick chart img](https://github.com/GunnarPDX/Nice-Charts/blob/master/candlesticks.png?raw=true)
 
+### Price Chart
+`src/charts/PriceChart.jsx`
+`src/charts/AreaChart.jsx`
+
+![price chart img](https://github.com/GunnarPDX/Nice-Charts/blob/master/price-chart.png?raw=true)
+
+### Threshold Chart
+`src/charts/ThresholdChart.jsx`
+
+![price chart img](https://github.com/GunnarPDX/Nice-Charts/blob/master/threshold.png?raw=true)
