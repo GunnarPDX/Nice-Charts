@@ -2,8 +2,9 @@
 
 ![examples preview](https://github.com/GunnarPDX/Nice-Charts/blob/master/preview.png?raw=true)
 
-These are some financial charts I made with react-vis and vx-charts/visx for projects of mine. 
+This is a collection of financial charts I made with react-vis and vx-charts/visx for projects of mine. 
 Sharing these in case anyone else finds them useful, feel free to open up a PR if there are any you would like to add.
+Inspiration came from https://github.com/hshoff/viewsource.
 
 react-vis: https://github.com/uber/react-vis
 `yarn add react-vis`
